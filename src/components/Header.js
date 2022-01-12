@@ -208,11 +208,11 @@ const SignOut=styled.div`
     display:none;
 `
 const User = styled(NavList)`
-    a>img{
+    a > svg{
         width:24px;
         border-radius:50%;
     }
-    a>img{
+    a > img{
         width:24px;
         height:24px;
         border-radius:50%;

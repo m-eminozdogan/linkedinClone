@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import Header from './Header'
+import Leftside from './Leftside'
+import Main from './Main'
+import Rightside from './Rightside'
 
 
 const Home = (props) => {
@@ -13,9 +16,9 @@ const Home = (props) => {
                     <p>Find talented pros in record time with Upwork and keep business moving.</p>
                 </Section>
                 <Layout>
-                    <div>Left Side</div>
-                    <div>Middle</div>
-                    <div>Right Side</div>
+                    <Leftside/>
+                    <Main/>
+                    <Rightside/>
                 </Layout>
             </Container>
         </div>
