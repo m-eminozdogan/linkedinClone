@@ -8,7 +8,7 @@ const Main = (props) => {
     )
 }
 const Container = styled.div`
-    grid-area:'main';
+    grid-area:main;
 
 `
 export default Main
