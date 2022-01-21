@@ -3,25 +3,30 @@ import Header from './Header'
 import Leftside from './Leftside'
 import Main from './Main'
 import Rightside from './Rightside'
-
+import { useNavigate } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 const Home = (props) => {
-    return (
+    const navigate = useNavigate()
 
+    return (
         <div>
             <Header />
             <Container>
+                {
+                    !props.user && navigate('/')
+                }
                 <Section>
                     <h5><a>Hiring in a hurry? - </a></h5>
                     <p>Find talented pros in record time with Upwork and keep business moving.</p>
                 </Section>
                 <Layout>
-                    <Leftside/>
-                    <Main/>
-                    <Rightside/>
+                    <Leftside />
+                    <Main />
+                    <Rightside />
                 </Layout>
             </Container>
-        </div>
+        </div >
     )
 }
 
@@ -29,7 +34,7 @@ const Container = styled.div`
     padding-top:52px;
     max-width:100%;
 `
-const Content=styled.div`
+const Content = styled.div`
     max-width:1128px;
     margin-left:auto;
     margin-right:auto;
@@ -62,7 +67,7 @@ const Section = styled.section`
         }
     }
 `
-const Layout=styled.div`
+const Layout = styled.div`
     display:grid;
     grid-template-areas:'leftside main rightside';
     grid-template-columns:minmax(0,5fr) minmax(0,12fr) minmax(300px,7fr);
@@ -76,4 +81,12 @@ const Layout=styled.div`
         padding:0 5px;
     }
 `
-export default Home
+const mapStateToProps = (state) => {
+    return {
+        user: state.userState.user
+    }
+}
+// const mapDispatchToProps = () => {
+
+// }
+export default connect(mapStateToProps)(Home)
