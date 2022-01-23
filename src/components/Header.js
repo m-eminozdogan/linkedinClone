@@ -214,6 +214,7 @@ const SignOut = styled.div`
     transition-duration:167ms;
     text-align:center;
     display:none;
+    margin-top:-2px;
 `
 const User = styled(NavList)`
     a > svg{
