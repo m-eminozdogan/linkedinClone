@@ -1,8 +1,8 @@
 import db, { auth, provider, storage } from '../firebase'
 import { signInWithPopup, signOut } from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
-import { SET_USER, SET_LOADING_STATUS } from './actionType'
-import { collection, addDoc, setDoc, doc } from "firebase/firestore";
+import { SET_USER, SET_LOADING_STATUS, GET_ARTICLES } from './actionType'
+import { collection, addDoc, setDoc, doc, getDocs, orderBy, onSnapshot } from "firebase/firestore";
 export const setUser = (payload) => ({
     type: SET_USER,
     user: payload,
@@ -10,6 +10,10 @@ export const setUser = (payload) => ({
 export const setLoading = (status) => ({
     type: SET_LOADING_STATUS,
     status: status
+})
+export const getArticles = (payload) => ({
+    type: GET_ARTICLES,
+    payload: payload
 })
 export function signInApi() {
 
@@ -160,5 +164,21 @@ export function postArticalApi(payload) {
 
             console.log("video koşulu sona erdi");
         }
+    }
+}
+
+export function getArticlesApi() {
+    return async (dispatch) => {
+
+        onSnapshot(collection(db, 'articles'), (snapshot) => {
+            let payload = snapshot.docs.map((doc) => {
+               // console.log(doc.data());
+
+                return { id: doc.id, ...doc.data() }
+            })
+            dispatch(getArticles(payload))
+           // console.log(payload);
+        })
+
     }
 }
