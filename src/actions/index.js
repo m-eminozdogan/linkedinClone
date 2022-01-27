@@ -1,13 +1,16 @@
 import db, { auth, provider, storage } from '../firebase'
 import { signInWithPopup, signOut } from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
-import { SET_USER } from './actionType'
+import { SET_USER, SET_LOADING_STATUS } from './actionType'
 import { collection, addDoc, setDoc, doc } from "firebase/firestore";
 export const setUser = (payload) => ({
     type: SET_USER,
     user: payload,
 });
-
+export const setLoading = (status) => ({
+    type: SET_LOADING_STATUS,
+    status: status
+})
 export function signInApi() {
 
     return (dispatch) => {
@@ -53,6 +56,8 @@ export function postArticalApi(payload) {
     const storageRef = ref(storage, 'images/' + payload.image.name);
     const uploadTask = uploadBytesResumable(storageRef, payload.image, metadata);
     return (dispatch) => {
+        dispatch(setLoading(true))
+
         if (payload.image !== "") {
             console.log('image koşuluna girdi');
             uploadTask.on('state_changed',
@@ -67,6 +72,9 @@ export function postArticalApi(payload) {
                         case 'running':
                             console.log('Upload is running');
                             break;
+                        default:
+                            dispatch(setLoading(false))
+                            break;
                     }
                 },
                 (error) => {
@@ -75,16 +83,24 @@ export function postArticalApi(payload) {
                     switch (error.code) {
                         case 'storage/unauthorized':
                             console.log('User doesnt have permission to access the object');
+                            dispatch(setLoading(false))
+
                             // User doesn't have permission to access the object
                             break;
                         case 'storage/canceled':
                             console.log('User canceled the upload');
+                            dispatch(setLoading(false))
+
                             // User canceled the upload
                             break;
                         // ...
                         case 'storage/unknown':
                             console.log('Unknown error occurred, inspect error.serverResponse');
+                            dispatch(setLoading(false))
+
                             // Unknown error occurred, inspect error.serverResponse
+                            break;
+                        default:
                             break;
                     }
                 },
@@ -106,6 +122,7 @@ export function postArticalApi(payload) {
                                 image: payload.user.photoURL
                             }
                         });
+                        dispatch(setLoading(false))
                         console.log("Document written with ID: ", docRef.id);
                     });
                 }
@@ -120,7 +137,7 @@ export function postArticalApi(payload) {
             var currentdate = new Date();
             var datetime = "time" + currentdate.getDate()
                 + (currentdate.getMonth() + 1)
-                + currentdate.getFullYear() 
+                + currentdate.getFullYear()
                 + currentdate.getHours()
                 + currentdate.getMinutes()
                 + currentdate.getSeconds();
@@ -139,6 +156,8 @@ export function postArticalApi(payload) {
                 }
             };
             setDoc(doc(db, "articles", `${payload.user.uid}${datetime}`), docData);
+            dispatch(setLoading(false))
+
             console.log("video koşulu sona erdi");
         }
     }
