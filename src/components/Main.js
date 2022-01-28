@@ -33,8 +33,46 @@ const Main = (props) => {
     return (
         <>{
             props.articles.length === 0 ?
-                (<p>THERE IS NO ARTICLES, NOTHING TO SHOW </p>) :
+                (
+                    <Container>
+                        <ShareBox>
+                            <div>
+                                {
+                                    props.user && props.user.photoURL ?
+                                        (<img alt='#' src={props.user.photoURL} />) :
+                                        (<img alt='#' src='/images/user.svg' />)
+                                }
+                                <button onClick={handleClick}>Start a post</button>
+                            </div>
+                            <div>
+                                <button >
+                                    <img onClick={handleClick} alt='#' src='/images/photo-icon.svg' />
+                                    <span onClick={handleClick}>Photo</span>
+                                </button>
+                                <button>
+                                    <img onClick={handleClick} alt='#' src='/images/video-icon.svg' />
+                                    <span onClick={handleClick}>Video</span>
+                                </button>
+                                <button>
+                                    <img onClick={handleClick} alt='#' src='/images/event-icon.svg' />
+                                    <span onClick={handleClick}>Event</span>
+                                </button>
+                                <button handleClick={handleClick}>
+                                    <img onClick={handleClick} alt='#' src='/images/article-icon.svg' />
+                                    <span onClick={handleClick}>Write article</span>
+                                </button>
+                            </div>
+                        </ShareBox>
+                        {props.loading && <div style={{textAlign:'center'}}><img alt='#' src='/images/spin-loader.gif' /></div>}
 
+                        <PostModal showModal={showModal} handleClick={handleClick} />
+                        <hr />
+                        <p>THERE IS NO ARTICLES, NOTHING TO SHOW,
+                            PLEASE POST SOMETHING </p>
+                    </Container>
+
+
+                ) :
                 (
                     <Container>
                         <ShareBox>
@@ -90,8 +128,8 @@ const Main = (props) => {
                                                 {
                                                     !article.sharedImg && article.video ?
                                                         <ReactPlayer width={'100%'} url={article.video} /> :
-                                                    <img alt='#' src={article.sharedImg} />
-                                                        
+                                                        <img alt='#' src={article.sharedImg} />
+
                                                 }
                                             </a>
                                         </SharedImg>
@@ -104,7 +142,7 @@ const Main = (props) => {
                                                 </button>
                                             </li>
                                             <li>
-                                                <a>3 comments</a>
+                                                <a>{article.comments} Comments</a>
                                             </li>
                                         </SocialCounts>
 

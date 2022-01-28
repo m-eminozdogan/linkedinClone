@@ -2,7 +2,7 @@ import db, { auth, provider, storage } from '../firebase'
 import { signInWithPopup, signOut } from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { SET_USER, SET_LOADING_STATUS, GET_ARTICLES } from './actionType'
-import { collection, addDoc, setDoc, doc, getDocs, orderBy, onSnapshot } from "firebase/firestore";
+import { collection, addDoc, setDoc, doc, onSnapshot } from "firebase/firestore";
 export const setUser = (payload) => ({
     type: SET_USER,
     user: payload,
@@ -112,8 +112,18 @@ export function postArticalApi(payload) {
                     // Upload completed successfully, now we can get the download URL
                     getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
                         console.log('File available at', downloadURL);
-
+                        //////////time calc////////
+                        var currentdate = new Date();
+                        var datetime = "time" + currentdate.getDate()
+                            + (currentdate.getMonth() + 1)
+                            + currentdate.getFullYear()
+                            + currentdate.getHours()
+                            + currentdate.getMinutes()
+                            + currentdate.getSeconds();
+                        ////////////////
                         const docRef = await addDoc(collection(db, "articles"), {
+
+                            additionalTime: datetime,
                             video: payload.video,
                             sharedImg: downloadURL,
                             comments: 0,
@@ -172,12 +182,10 @@ export function getArticlesApi() {
 
         onSnapshot(collection(db, 'articles'), (snapshot) => {
             let payload = snapshot.docs.map((doc) => {
-               // console.log(doc.data());
-
+                // console.log(doc.data());
                 return { id: doc.id, ...doc.data() }
             })
             dispatch(getArticles(payload))
-           // console.log(payload);
         })
 
     }
