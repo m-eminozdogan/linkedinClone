@@ -142,7 +142,6 @@ export function postArticalApi(payload) {
                 }
             );
             console.log("image koşulu bitti");
-
         }
         //else if buraya
         else if (payload.video) {
@@ -182,10 +181,11 @@ export function getArticlesApi() {
 
         onSnapshot(collection(db, 'articles'), (snapshot) => {
             let payload = snapshot.docs.map((doc) => {
-                // console.log(doc.data());
                 return { id: doc.id, ...doc.data() }
+
             })
-            dispatch(getArticles(payload))
+
+            dispatch(getArticles(payload.sort((a, b) => (a.actor.date < b.actor.date) ? 1 : -1)))
         })
 
     }

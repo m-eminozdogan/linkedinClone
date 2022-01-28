@@ -4,15 +4,17 @@ import { signInApi } from '../actions/index'
 import { Navigate } from 'react-router'
 
 const Login = (props) => {
-
+    function loginClick(){
+        alert('please use google login button')
+    }
     return (
         <Container>
             {props.user && <Navigate to='/home'/>}
             <Nav>
                 <a href='/'><img alt='#' src='/images/login-logo.svg' /></a>
                 <div>
-                    <Join>Join now</Join>
-                    <SignIn>Sign in</SignIn>
+                    <Join onClick={loginClick}>Join now</Join>
+                    <SignIn onClick={loginClick}>Sign in</SignIn>
                 </div>
             </Nav>
             <Section>

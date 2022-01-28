@@ -8,6 +8,11 @@ import { getArticlesApi } from '../actions'
 const Main = (props) => {
     const [showModal, setShowModal] = useState('close')
 
+    function dateConverter(date) {
+        const today = new Date(date);
+        return today.toLocaleDateString()
+    }
+
     useEffect(() => {
         props.getArticles()
     }, [])
@@ -45,36 +50,35 @@ const Main = (props) => {
                                 <button onClick={handleClick}>Start a post</button>
                             </div>
                             <div>
-                                <button >
-                                    <img onClick={handleClick} alt='#' src='/images/photo-icon.svg' />
-                                    <span onClick={handleClick}>Photo</span>
+                                <button onClick={handleClick}>
+                                    <img alt='#' src='/images/photo-icon.svg' />
+                                    <span >Photo</span>
                                 </button>
-                                <button>
-                                    <img onClick={handleClick} alt='#' src='/images/video-icon.svg' />
-                                    <span onClick={handleClick}>Video</span>
+                                <button onClick={handleClick}>
+                                    <img alt='#' src='/images/video-icon.svg' />
+                                    <span >Video</span>
                                 </button>
-                                <button>
-                                    <img onClick={handleClick} alt='#' src='/images/event-icon.svg' />
-                                    <span onClick={handleClick}>Event</span>
+                                <button onClick={handleClick}>
+                                    <img alt='#' src='/images/event-icon.svg' />
+                                    <span >Event</span>
                                 </button>
-                                <button handleClick={handleClick}>
-                                    <img onClick={handleClick} alt='#' src='/images/article-icon.svg' />
-                                    <span onClick={handleClick}>Write article</span>
+                                <button onClick={handleClick}>
+                                    <img alt='#' src='/images/article-icon.svg' />
+                                    <span >Write article</span>
                                 </button>
                             </div>
                         </ShareBox>
-                        {props.loading && <div style={{textAlign:'center'}}><img alt='#' src='/images/spin-loader.gif' /></div>}
+                        {props.loading && <div style={{ textAlign: 'center' }}><img alt='#' src='/images/spin-loader.gif' /></div>}
 
                         <PostModal showModal={showModal} handleClick={handleClick} />
                         <hr />
                         <p>THERE IS NO ARTICLES, NOTHING TO SHOW,
                             PLEASE POST SOMETHING </p>
                     </Container>
-
-
                 ) :
                 (
                     <Container>
+
                         <ShareBox>
                             <div>
                                 {
@@ -107,7 +111,9 @@ const Main = (props) => {
                             {props.loading && <img alt='#' src='/images/spin-loader.gif' />}
 
                             {props.articles.length > 0 &&
+
                                 props.articles.map((article, key) => (
+
                                     <Article key={key}>
                                         <SharedActor>
                                             <a>
@@ -115,7 +121,12 @@ const Main = (props) => {
                                                 <div>
                                                     <span>{article.actor.title}</span>
                                                     <span>{article.actor.description}</span>
-                                                    <span>{article.actor.date}</span>
+                                                    <span>
+                                                        {
+                                                            dateConverter(article.actor.date).toString()
+
+                                                        }
+                                                    </span>
                                                 </div>
                                             </a>
                                             <button><img alt='#' src='/images/ellipsis.svg' /></button>
@@ -168,7 +179,6 @@ const Main = (props) => {
                                 ))
                             }
                         </Content>
-
                         <PostModal showModal={showModal} handleClick={handleClick} />
                     </Container>
                 )
@@ -176,128 +186,126 @@ const Main = (props) => {
     )
 }
 const Container = styled.div`
-    grid-area:main;
-`
+                            grid-area:main;
+                            `
 const CommonCard = styled.div`
-    text-align:center;
-    overflow:hidden;
-    margin-bottom:8px;
-    background-color:#fff;
-    border-radius:5px;
-    position:none;
-    border:none;
-    box-shadow:0 0 0 1px rgb(0 0 0 /15%),0 0 0 rgb(0 0 0 /20%);
+                            text-align:center;
+                            overflow:hidden;
+                            margin-bottom:8px;
+                            background-color:#fff;
+                            border-radius:5px;
+                            position:none;
+                            border:none;
+                            box-shadow:0 0 0 1px rgb(0 0 0 /15%),0 0 0 rgb(0 0 0 /20%);
 
-`
+                            `
 const ShareBox = styled(CommonCard)`
-    display:flex;
-    flex-direction:column;
-    color:#958b7b;
-    margin:0 0 8px;
-    background:white;
-    div{
-        button{
-        outline:none;
-        color:rgba(0,0,0,0.6);
-        font-size:14px;
-        line-height:1.5;
-        min-height:48px;
-        background:transparent;
-        border:none;
-        display:flex;
-        align-items:center;
-        font-weight:550;
+                            display:flex;
+                            flex-direction:column;
+                            color:#958b7b;
+                            margin:0 0 8px;
+                            background:white;
+                            div{
+                                button{
+                                outline:none;
+                            color:rgba(0,0,0,0.6);
+                            font-size:14px;
+                            line-height:1.5;
+                            min-height:48px;
+                            background:transparent;
+                            border:none;
+                            display:flex;
+                            align-items:center;
+                            font-weight:550;
         }
-        &:first-child{
-            display:flex;
-            align-items:center;
-            padding:8px 16px 0px 16px;
-            img{
-                width:48px;
-                border-radius:50%;
-                margin-right:8px;
+                            &:first-child{
+                                display:flex;
+                            align-items:center;
+                            padding:8px 16px 0px 16px;
+                            img{
+                                width:48px;
+                            border-radius:50%;
+                            margin-right:8px;
             }
-            button{
-                margin:4px 0;
-                flex-grow:1;
-                border-radius:35px;
-                padding-left:16px;
-                border:1px solid rgba(0,0,0,0.15);
-                background-color:#fff;
-                text-align:left;
+                            button{
+                                margin:4px 0;
+                            flex-grow:1;
+                            border-radius:35px;
+                            padding-left:16px;
+                            border:1px solid rgba(0,0,0,0.15);
+                            background-color:#fff;
+                            text-align:left;
             }
         }
-        &:nth-child(2){
-            display:flex;
-        flex-wrap:wrap;
-        justify-content:space-around;
-        padding-bottom:4px;
-        button{
-            img{
-            margin:0 4px 0 -2px;
+                            &:nth-child(2){
+                                display:flex;
+                            flex-wrap:wrap;
+                            justify-content:space-around;
+                            padding-bottom:4px;
+                            button{
+                                img{
+                                margin:0 4px 0 -2px;
             }
-            span{
-                /* color:#70b5f9; */
-            }
+                            span{
+                                /* color:#70b5f9; */
+                            }
             }
         }
     }
-`
+                            `
 const Article = styled(CommonCard)`
     padding:0;
     margin: 0 0 8px;
     overflow:visible;
 `
 const SharedActor = styled.div`
-     padding-right:40px;
-     flex-wrap:nowrap;
-     padding:12px 16px 0;
-     margin-bottom:8px;
-     align-items:center;
-     display:flex;
-     position:relative;
-        a{
-            margin-right:12px;
-            flex-grow:1;
-            overflow: hidden;
-            display:flex;
-            text-decoration:none;
-            img{
-                width:48px;
-                height:48px;
+    padding-right:40px;
+    flex-wrap:nowrap;
+    padding:12px 16px 0;
+    margin-bottom:8px;
+    align-items:center;
+    display:flex;
+    position:relative;
+    a{
+        margin-right:12px;
+        flex-grow:1;
+        overflow: hidden;
+        display:flex;
+        text-decoration:none;
+    img{
+        width:48px;
+        height:48px;
         }
-        & > div{
-            display:flex;
-            flex-direction:column;
-            flex-grow:1;
-            flex-basis:0;
-            margin-left:8px;
-            overflow:hidden;
-            span{
-                text-align:left;
+    & > div{
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+    flex-basis:0;
+    margin-left:8px;
+    overflow:hidden;
+        span{
+            text-align:left;
             &:first-child{
-                font-size:14px;
+            font-size:14px;
             font-weight:700;
             color:rgba(0,0,0,1);
-            }
-
-            &:nth-child(n+1){
-                font-size:12px;
-                color:rgba(0,0,0,0.6);
-                }
+        }
+        &:nth-child(n+1){
+             font-size:12px;
+             color:rgba(0,0,0,0.6);
             }
         }
     }
+}
 
     button{
         position:absolute;
-        right:12px;
-        top:0;
-        background:transparent;
-        border:none;
-        outline:none;
+    right:12px;
+    top:0;
+    background:transparent;
+    border:none;
+    outline:none;
     }
-
 `
 const Description = styled.div`
     padding:0 16px;
@@ -314,8 +322,8 @@ const SharedImg = styled.div`
     background-color:#f9fafb;
     img{
         object-fit:contain;
-        width:100%;
-        height:100%;
+    width:100%;
+    height:100%;
     }
 `
 const SocialCounts = styled.ul`
@@ -329,12 +337,14 @@ const SocialCounts = styled.ul`
     list-style:none;
     li{
         margin-right:5px;
-        font-size:12px;
-        button{
-            display:flex;
-        }
-    }
-`
+    font-size:12px;
+    button{
+        display:flex;
+        border:none;
+        background-color:white;
+   }
+}
+                            `
 const SocialActions = styled.div`
     align-items:center;
     display:flex;
@@ -344,16 +354,18 @@ const SocialActions = styled.div`
     padding:4px 8px;
     button{
         display:inline-flex;
-        align-items:center;
-        padding:8px;
-        color:#0a66c2;
-        @media(min-width:768px){
-            span{
-                margin-left:8px;
-            }
+    align-items:center;
+    padding:8px;
+    color:#0a66c2;
+    border:none;
+    background-color:white;
+    @media(min-width:768px){
+        span{
+        margin-left:8px;
         }
     }
-`
+}
+                            `
 const Content = styled.div`
     text-align:center;
     & > img{
