@@ -58,14 +58,13 @@ const PostModal = (props) => {
                         <Header>
                             <h2>Create a post</h2>
                             <button onClick={(event) => reset(event)}>X</button>
-                            {/* <button> <img alt='#' src='/images/close-icon.svg' /> </button> */}
                         </Header>
                         <SharedContent>
                             <UserInfo>
                                 {props.user.photoURL ?
                                     <img alt={props.user.displayName} src={props.user.photoURL} />
                                     :
-                                    <img alt='#' src='/images/user.svg' />}
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/user.svg' />}
                                 <span>{props.user.displayName}</span>
                             </UserInfo>
                             <Editor>
@@ -104,15 +103,15 @@ const PostModal = (props) => {
                         <ShareCreation>
                             <AttachAssets>
                                 <AssetButton onClick={() => switchAssetArea('image')}>
-                                    <img alt='#' src='/images/photo-icon2.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/photo-icon2.svg' />
                                 </AssetButton>
                                 <AssetButton onClick={() => switchAssetArea('media')} >
-                                    <img alt='#' src='/images/video-icon2.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/video-icon2.svg' />
                                 </AssetButton>
                             </AttachAssets>
                             <ShareComment>
                                 <AssetButton>
-                                    <img alt='#' src='/images/comment-icon2.svg' style={{ marginLeft: '-12px' }} />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/comment-icon2.svg' style={{ marginLeft: '-12px' }} />
                                     Anyone
                                 </AssetButton>
                             </ShareComment>

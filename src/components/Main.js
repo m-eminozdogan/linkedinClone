@@ -45,30 +45,30 @@ const Main = (props) => {
                                 {
                                     props.user && props.user.photoURL ?
                                         (<img alt='#' src={props.user.photoURL} />) :
-                                        (<img alt='#' src='/images/user.svg' />)
+                                        (<img alt='#' src='https://meminozdogan.com/linkedinclone/images/user.svg' />)
                                 }
                                 <button onClick={handleClick}>Start a post</button>
                             </div>
                             <div>
                                 <button onClick={handleClick}>
-                                    <img alt='#' src='/images/photo-icon.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/photo-icon.svg' />
                                     <span >Photo</span>
                                 </button>
                                 <button onClick={handleClick}>
-                                    <img alt='#' src='/images/video-icon.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/video-icon.svg' />
                                     <span >Video</span>
                                 </button>
                                 <button onClick={handleClick}>
-                                    <img alt='#' src='/images/event-icon.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/event-icon.svg' />
                                     <span >Event</span>
                                 </button>
                                 <button onClick={handleClick}>
-                                    <img alt='#' src='/images/article-icon.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/article-icon.svg' />
                                     <span >Write article</span>
                                 </button>
                             </div>
                         </ShareBox>
-                        {props.loading && <div style={{ textAlign: 'center' }}><img alt='#' src='/images/spin-loader.gif' /></div>}
+                        {props.loading && <div style={{ textAlign: 'center' }}><img alt='#' src='https://meminozdogan.com/linkedinclone/images/spin-loader.gif' /></div>}
 
                         <PostModal showModal={showModal} handleClick={handleClick} />
                         <hr />
@@ -84,31 +84,31 @@ const Main = (props) => {
                                 {
                                     props.user && props.user.photoURL ?
                                         (<img alt='#' src={props.user.photoURL} />) :
-                                        (<img alt='#' src='/images/user.svg' />)
+                                        (<img alt='#' src='https://meminozdogan.com/linkedinclone/images/user.svg' />)
                                 }
                                 <button onClick={handleClick}>Start a post</button>
                             </div>
                             <div>
                                 <button>
-                                    <img alt='#' src='/images/photo-icon.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/photo-icon.svg' />
                                     <span>Photo</span>
                                 </button>
                                 <button>
-                                    <img alt='#' src='/images/video-icon.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/video-icon.svg' />
                                     <span>Video</span>
                                 </button>
                                 <button>
-                                    <img alt='#' src='/images/event-icon.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/event-icon.svg' />
                                     <span>Event</span>
                                 </button>
                                 <button>
-                                    <img alt='#' src='/images/article-icon.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/article-icon.svg' />
                                     <span>Write article</span>
                                 </button>
                             </div>
                         </ShareBox>
                         <Content>
-                            {props.loading && <img alt='#' src='/images/spin-loader.gif' />}
+                            {props.loading && <img alt='#' src='https://meminozdogan.com/linkedinclone/images/spin-loader.gif' />}
 
                             {props.articles.length > 0 &&
 
@@ -129,7 +129,7 @@ const Main = (props) => {
                                                     </span>
                                                 </div>
                                             </a>
-                                            <button><img alt='#' src='/images/ellipsis.svg' /></button>
+                                            <button><img alt='#' src='https://meminozdogan.com/linkedinclone/images/ellipsis.svg' /></button>
                                         </SharedActor>
                                         <Description>
                                             {article.description}
@@ -159,19 +159,19 @@ const Main = (props) => {
 
                                         <SocialActions>
                                             <button>
-                                                <img alt='#' src='/images/like-icon.svg' />
+                                                <img alt='#' src='https://meminozdogan.com/linkedinclone/images/like-icon.svg' />
                                                 <span>Like</span>
                                             </button>
                                             <button>
-                                                <img alt='#' src='/images/comment-icon.svg' />
+                                                <img alt='#' src='https://meminozdogan.com/linkedinclone/images/comment-icon.svg' />
                                                 <span>Comments</span>
                                             </button>
                                             <button>
-                                                <img alt='#' src='/images/share-icon.svg' />
+                                                <img alt='#' src='https://meminozdogan.com/linkedinclone/images/share-icon.svg' />
                                                 <span>Share</span>
                                             </button>
                                             <button>
-                                                <img alt='#' src='/images/send-icon.svg' />
+                                                <img alt='#' src='https://meminozdogan.com/linkedinclone/images/send-icon.svg' />
                                                 <span>Send</span>
                                             </button>
                                         </SocialActions>

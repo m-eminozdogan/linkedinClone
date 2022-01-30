@@ -1,0 +1,91 @@
+Date : 2022-01-30 22:38:59
+Directory : c:\kamp\LinkedinClone\linkedin-clone
+Total : 55 files,  55919 codes, 59 comments, 135 blanks, all 56113 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          3 |     53,972 |          0 |          3 |     53,975 |
+| JavaScript |         16 |      1,742 |         36 |         91 |      1,869 |
+| XML        |         32 |        113 |          0 |          5 |        118 |
+| Markdown   |          1 |         38 |          0 |         33 |         71 |
+| PostCSS    |          2 |         34 |          0 |          2 |         36 |
+| HTML       |          1 |         20 |         23 |          1 |         44 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                     | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                        |         55 |     55,919 |         59 |        135 |     56,113 |
+| public                                                                   |         34 |        148 |         23 |          7 |        178 |
+| public\images                                                            |         32 |        113 |          0 |          5 |        118 |
+| src                                                                      |         18 |      1,776 |         36 |         93 |      1,905 |
+| src\actions                                                              |          2 |        187 |         22 |         19 |        228 |
+| src\components                                                           |          7 |      1,441 |          7 |         51 |      1,499 |
+| src\reducers                                                             |          3 |         46 |          0 |          6 |         52 |
+| src\store                                                                |          1 |          5 |          0 |          3 |          8 |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                 | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\kamp\LinkedinClone\linkedin-clone\README.md                           | Markdown   |         38 |          0 |         33 |         71 |
+| c:\kamp\LinkedinClone\linkedin-clone\package-lock.json                   | JSON       |     53,910 |          0 |          1 |     53,911 |
+| c:\kamp\LinkedinClone\linkedin-clone\package.json                        | JSON       |         47 |          0 |          1 |         48 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\article-icon.svg      | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\card-bg.svg           | XML        |          6 |          0 |          1 |          7 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\comment-icon.svg      | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\comment-icon2.svg     | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\down-icon.svg         | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\ellipsis.svg          | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\event-icon.svg        | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\feed-icon.svg         | XML        |          3 |          0 |          1 |          4 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\google.svg            | XML        |          1 |          0 |          0 |          1 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\home-logo.svg         | XML        |          5 |          0 |          0 |          5 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\item-icon.svg         | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\like-icon.svg         | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\login-hero.svg        | XML        |          1 |          0 |          0 |          1 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\login-logo.svg        | XML        |          1 |          0 |          0 |          1 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\nav-home.svg          | XML        |          4 |          0 |          0 |          4 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\nav-jobs.svg          | XML        |          1 |          0 |          0 |          1 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\nav-messaging.svg     | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\nav-network.svg       | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\nav-notifications.svg | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\nav-work.svg          | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\photo-icon.svg        | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\photo-icon2.svg       | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\photo.svg             | XML        |         11 |          0 |          1 |         12 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\plus-icon.svg         | XML        |          3 |          0 |          1 |          4 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\right-icon.svg        | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\search-icon.svg       | XML        |         11 |          0 |          0 |         11 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\send-icon.svg         | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\share-icon.svg        | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\user.svg              | XML        |          6 |          0 |          0 |          6 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\video-icon.svg        | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\video-icon2.svg       | XML        |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\images\widget-icon.svg       | XML        |          3 |          0 |          1 |          4 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\index.html                   | HTML       |         20 |         23 |          1 |         44 |
+| c:\kamp\LinkedinClone\linkedin-clone\public\manifest.json                | JSON       |         15 |          0 |          1 |         16 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\App.css                         | PostCSS    |          0 |          0 |          1 |          1 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\App.js                          | JavaScript |         29 |          0 |          6 |         35 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\actions\actionType.js           | JavaScript |          3 |          0 |          0 |          3 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\actions\index.js                | JavaScript |        184 |         22 |         19 |        225 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\components\Header.js            | JavaScript |        247 |          0 |          7 |        254 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\components\Home.js              | JavaScript |         85 |          2 |          5 |         92 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\components\Leftside.js          | JavaScript |        193 |          0 |          6 |        199 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\components\Login.js             | JavaScript |        166 |          2 |          9 |        177 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\components\Main.js              | JavaScript |        370 |          2 |         13 |        385 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\components\PostModal.js         | JavaScript |        269 |          1 |         10 |        280 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\components\Rightside.js         | JavaScript |        111 |          0 |          1 |        112 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\firebase.js                     | JavaScript |         20 |          4 |          2 |         26 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\index.css                       | PostCSS    |         34 |          0 |          1 |         35 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\index.js                        | JavaScript |         14 |          3 |          4 |         21 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\reducers\articalReducer.js      | JavaScript |         22 |          0 |          2 |         24 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\reducers\index.js               | JavaScript |          8 |          0 |          2 |         10 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\reducers\userReducer.js         | JavaScript |         16 |          0 |          2 |         18 |
+| c:\kamp\LinkedinClone\linkedin-clone\src\store\index.js                  | JavaScript |          5 |          0 |          3 |          8 |
+| Total                                                                    |            |     55,919 |         59 |        135 |     56,113 |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+

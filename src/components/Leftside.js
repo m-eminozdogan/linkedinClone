@@ -21,12 +21,12 @@ const Leftside = (props) => {
                             <span>Connections</span>
                             <span>Grow your network</span>
                         </div>
-                        <img alt='#' src='/images/widget-icon.svg' />
+                        <img alt='#' src='https://meminozdogan.com/linkedinclone/images/widget-icon.svg' />
                     </a>
                 </Widget>
                 <Item>
                     <span>
-                        <img alt='#' src='/images/item-icon.svg' />
+                        <img alt='#' src='https://meminozdogan.com/linkedinclone/images/item-icon.svg' />
                         My Items
                     </span>
                 </Item>
@@ -38,7 +38,7 @@ const Leftside = (props) => {
                 <a>
                     <span>
                         Events
-                        <img alt='#' src='/images/plus-icon.svg' />
+                        <img alt='#' src='https://meminozdogan.com/linkedinclone/images/plus-icon.svg' />
                     </span>
                 </a>
                 <a>
@@ -81,7 +81,7 @@ const CardBackground = styled.div`
 `
 const Photo = styled.div`
     box-shadow:none;
-    background-image: url('/images/photo.svg');
+    background-image: url('https://meminozdogan.com/linkedinclone/images/photo.svg');
     width: 72px;
     height:72px;
     box-sizing:border-box;

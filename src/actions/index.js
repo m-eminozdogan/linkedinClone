@@ -56,12 +56,12 @@ export function signOutApi() {
 }
 
 export function postArticalApi(payload) {
+    const defaultStorageRef = ref(storage, 'images/' + "linkedin.jpg");
     const metadata = { contentType: 'image/jpeg' }
     const storageRef = ref(storage, 'images/' + payload.image.name);
     const uploadTask = uploadBytesResumable(storageRef, payload.image, metadata);
     return (dispatch) => {
         dispatch(setLoading(true))
-
         if (payload.image !== "") {
             console.log('image koşuluna girdi');
             uploadTask.on('state_changed',
@@ -142,6 +142,39 @@ export function postArticalApi(payload) {
                 }
             );
             console.log("image koşulu bitti");
+        }
+        else if (payload.image === "") {
+            // Upload completed successfully, now we can get the download URL
+            getDownloadURL(defaultStorageRef).then(async (downloadURL) => {
+                console.log('File available at', downloadURL);
+                //////////time calc////////
+                var currentdate = new Date();
+                var datetime = "time" + currentdate.getDate()
+                    + (currentdate.getMonth() + 1)
+                    + currentdate.getFullYear()
+                    + currentdate.getHours()
+                    + currentdate.getMinutes()
+                    + currentdate.getSeconds();
+                ////////////////
+                const docRef = await addDoc(collection(db, "articles"), {
+
+                    additionalTime: datetime,
+                    video: payload.video,
+                    sharedImg: downloadURL,
+                    comments: 0,
+                    description: payload.description,
+                    /////////////////
+                    actor: {
+                        description: payload.user.email,
+                        title: payload.user.displayName,
+                        date: Date.now(),
+                        image: payload.user.photoURL
+                    }
+                });
+                dispatch(setLoading(false))
+                console.log("Document written with ID: ", docRef.id);
+            });
+
         }
         //else if buraya
         else if (payload.video) {

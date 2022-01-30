@@ -11,7 +11,7 @@ const Login = (props) => {
         <Container>
             {props.user && <Navigate to='/home'/>}
             <Nav>
-                <a href='/'><img alt='#' src='/images/login-logo.svg' /></a>
+                <a href='/'><img alt='#' src='https://meminozdogan.com/linkedinclone/images/login-logo.svg' /></a>
                 <div>
                     <Join onClick={loginClick}>Join now</Join>
                     <SignIn onClick={loginClick}>Sign in</SignIn>
@@ -20,11 +20,11 @@ const Login = (props) => {
             <Section>
                 <Hero>
                     <h1>Welcome to your professional community</h1>
-                    <img alt='#' src='/images/login-hero.svg' />
+                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/login-hero.svg' />
                 </Hero>
                 <Form>
                     <Google onClick={(e) => props.signIn(e.preventDefault())}>
-                        <img alt='#' src='/images/google.svg' />
+                        <img alt='#' src='https://meminozdogan.com/linkedinclone/images/google.svg' />
                         Sign in with google
                     </Google>
                 </Form>

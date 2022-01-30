@@ -8,7 +8,7 @@ const Header = (props) => {
             <Content>
                 <Logo>
                     <a href='/home'>
-                        <img alt='#' src='/images/home-logo.svg' />
+                        <img alt='#' src='https://meminozdogan.com/linkedinclone/images/home-logo.svg' />
                     </a>
                 </Logo>
                 <Search>
@@ -16,38 +16,38 @@ const Header = (props) => {
                         <input type='text' placeholder='Search' />
                     </div>
                     <SearchIcon>
-                        <img src="/images/search-icon.svg" alt="" />
+                        <img src="https://meminozdogan.com/linkedinclone/images/search-icon.svg" alt="" />
                     </SearchIcon>
                 </Search>
                 <Nav>
                     <NavListWrap>
                         <NavList className='active'>
                             <a>
-                                <img alt='#' src='/images/nav-home.svg' />
+                                <img alt='#' src='https://meminozdogan.com/linkedinclone/images/nav-home.svg' />
                                 <span>Home</span>
                             </a>
                         </NavList>
                         <NavList>
                             <a>
-                                <img alt='#' src='/images/nav-network.svg' />
+                                <img alt='#' src='https://meminozdogan.com/linkedinclone/images/nav-network.svg' />
                                 <span>My Network</span>
                             </a>
                         </NavList>
                         <NavList>
                             <a>
-                                <img alt='#' src='/images/nav-jobs.svg' />
+                                <img alt='#' src='https://meminozdogan.com/linkedinclone/images/nav-jobs.svg' />
                                 <span>Jobs</span>
                             </a>
                         </NavList>
                         <NavList>
                             <a>
-                                <img alt='#' src='/images/nav-messaging.svg' />
+                                <img alt='#' src='https://meminozdogan.com/linkedinclone/images/nav-messaging.svg' />
                                 <span>Messaging</span>
                             </a>
                         </NavList>
                         <NavList>
                             <a>
-                                <img alt='#' src='/images/nav-notifications.svg' />
+                                <img alt='#' src='https://meminozdogan.com/linkedinclone/images/nav-notifications.svg' />
                                 <span>Notifications</span>
                             </a>
                         </NavList>
@@ -57,10 +57,10 @@ const Header = (props) => {
                                     props.user && props.user.photoURL ?
                                         <img alt='#' src={props.user.photoURL} /> :
 
-                                        <img alt='#' src='/images/user.svg' />
+                                        <img alt='#' src='https://meminozdogan.com/linkedinclone/images/user.svg' />
                                 }
                                 <span>Me
-                                    <img alt='#' src='/images/down-icon.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/down-icon.svg' />
                                 </span>
                             </a>
 
@@ -72,9 +72,9 @@ const Header = (props) => {
                         </User>
                         <Work>
                             <a>
-                                <img alt='#' src='/images/nav-work.svg' />
+                                <img alt='#' src='https://meminozdogan.com/linkedinclone/images/nav-work.svg' />
                                 <span>Work
-                                    <img alt='#' src='/images/down-icon.svg' />
+                                    <img alt='#' src='https://meminozdogan.com/linkedinclone/images/down-icon.svg' />
                                 </span>
                             </a>
                         </Work>
